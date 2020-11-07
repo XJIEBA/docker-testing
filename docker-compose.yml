@@ -1,7 +1,7 @@
 version: "3"
 services:
   php:
-    image: php:7.1-fpm-alpine
+    image: php:7.4-fpm-alpine
     build: './.setup/php/'
     networks:
       - AMP
@@ -21,7 +21,7 @@ services:
       - ./.setup/apache/docker.apache.conf:/usr/local/apache2/conf.d/docker.apache.conf
       - ./.setup/apache/logs/:/usr/local/apache2/logs
   mysql:
-    image: mysql:5.6
+    image: mysql:5.7
     volumes:
       - ./.setup/mysql/data/:/var/lib/mysql/
     networks:
